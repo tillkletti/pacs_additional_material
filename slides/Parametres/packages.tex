@@ -1,0 +1,198 @@
+% \usepackage{lmodern}
+% \usepackage[latin1]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage[english]{babel}
+
+
+%%%%%%%%%%%%%%%%%%%% T E X T E %%%%%%%%%%%%%%%%%%%%%%
+
+% package qui permettent d'utiliser tout un tas de symboles math?matiques
+% \usepackage{amsmath}
+% \numberwithin{equation}{section}
+%
+% \usepackage{amssymb}
+% \usepackage{empheq}
+% %\usepackage{mathrsfs}
+% \usepackage[squaren,Gray]{SIunits} %Unit�s SI
+%
+% % Polices
+% %\usepackage{mathpazo} %Police styl�e de J�r�my Omer
+% %\usepackage{txfonts} %autre police styl�e, s'approche du style de word
+% %\usepackage{libertine}
+%
+% % permet d'?crire des caract?res chinois
+% %\usepackage{CJKutf8}
+% %Utiliser le pinyin
+% %\usepackage{pinyin}
+%
+% % package qui permettent de personaliser les puces des listes
+% \usepackage{enumerate}
+% \usepackage{enumitem} % pour utiliser description
+%
+% % package qui permettent d'introduire de la couleur
+% \usepackage{color}
+% \definecolor{mygreen}{rgb}{0,0.6,0}
+% \definecolor{mygray}{rgb}{0.5,0.5,0.5}
+% \definecolor{mymauve}{rgb}{0.58,0,0.82}
+%
+% \usepackage{xspace}
+% % permet l'affichage de l'heure courante
+% %\usepackage{datetime}
+%
+% %pour pouvoir barrer avec \cancel{}
+% %\usepackage{cancel}
+%
+% %pour la fonction indicatrice 1
+% %\usepackage{dsfont}
+%
+% %pour utiliser le symbole euro par \euro
+% \usepackage{eurosym}
+%
+% %afficher des nombres en mode texte
+% \usepackage{numprint}
+%
+% %Capitale grande en d�but de paraghraphe
+% %\usepackage{lettrine}
+%
+%
+% %%%%%%%%%%%%%%%%%%%% F I G U R E S %%%%%%%%%%%%%%%%%%%%%%
+%
+% % package qui permettent d'inclure des graphiques
+% \usepackage{graphicx}
+% \numberwithin{figure}{section}
+%
+% %Pour utiliser des sous-figures
+% \usepackage{subcaption}
+%
+% %Pour utiliser [H] pour le placement des figures
+% \usepackage{float}
+%
+% %figure entour�e de texte
+% \usepackage{wrapfig}
+% % \begin{wrapfigure}{L}{0.4\textwidth}
+%
+% %Keep figures in section
+% \usepackage[section]{placeins}
+% % \FloatBarrier % stops floats from descending further
+%
+% % Pour des r�f�rences styl�es
+% %\usepackage{varioref}
+% %\usepackage[german]{fancyref} % dispo seulement en allemand
+% \usepackage[linkcolor=black,
+% 						urlcolor=black,
+% 						colorlinks=true,
+% 						citecolor=mygreen]{hyperref}% package qui cr�er des liens dynamiques dans un fichier pdf � partir de tout �l�ment tagg�
+% %\usepackage{cleveref}
+%
+%
+% %%%%%%%%%%%%%%%%%%%% D E S S I N %%%%%%%%%%%%%%%%%%%%%%
+%
+% %pour dessiner des graphes de fonctions
+% \usepackage{pgfplots}
+
+%pour plein de commandes de dession
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+
+%%%%%%%%%%%%%%%%%%%% H E A D E R et F O O T E R %%%%%%%%%%%%%%%%%%%%%%
+
+% \usepackage{fancyhdr}
+% %\fancyfoot{}
+% \fancyfoot[LE,RO]{\thepage}
+%
+%
+% %%%%%%%%%%%%%%%%%%%%%% D I V E R S %%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% %Bibliographie
+% \usepackage[backend=bibtex,sorting=ynt]{biblatex}%sorting=none pour avoir les r�f�rences selon d'ordre d'apparition dans le texte
+% % sorting=ynt		backend=biber,
+%
+% %pour que les textes en Verbatim soient encadr�s
+% %\usepackage{fancyvrb}
+%
+% % Mettre en forme son texte en plusieurs colonnes
+% %\usepackage{multicol}
+%
+% %pour manipuler les compteurs avec par exemple \counterwithin{figure}{section}
+% \usepackage{chngcntr}
+%
+% %pour importer des sections
+% \usepackage{import}
+%
+% %Appendices
+% \usepackage[title,toc,page,header]{appendix}
+% \renewcommand{\appendixtocname}{Tables des Annexes}
+% \renewcommand{\appendixpagename}{Annexes}
+%
+% %\usepackage{couvresumesPFE} % utilisation du package pfe.sty pour cr�er la couverture et la page de r�sum�s en fran�ais et en anglais
+%
+%
+% %%%%%%%%%%%%%%%%%%% C O D E %%%%%%%%%%%%%%%%%%%%%%%
+%
+% % Pour �crire du pseudo-code
+% %\usepackage{algorithm2e}
+% %\usepackage{algorithmic}
+% \usepackage{algorithm}
+% \usepackage{algpseudocode}
+% %\listofalgorithms % commande pour lister les algorithmes
+%
+% %pour ins�rer du code
+% \usepackage{listings}
+% \usepackage{listingsutf8}
+% %\usepackage{inconsolata}
+% \lstdefinestyle{CodeR}{ %
+%   backgroundcolor=\color{white},
+%   basicstyle=\footnotesize,
+%   breakatwhitespace=false
+%   breaklines=true,
+%   captionpos=b,
+%   commentstyle=\color{mygreen},
+%   deletekeywords={...},
+%   escapeinside={Ratus}{Chiffon},
+%   extendedchars=true,
+%   frame=single,
+%   keepspaces=true,
+%   keywordstyle=\color{blue},
+%   language=R,
+%   otherkeywords={*,...},
+%   numbers=left,
+%   numbersep=5pt,
+%   numberstyle=\tiny\color{mygray},
+%   rulecolor=\color{black},
+%   showspaces=false,
+%   showstringspaces=false,
+%   showtabs=false,
+%   stepnumber=1,
+%   stringstyle=\color{mymauve},
+%   tabsize=4,
+%   title=\lstname
+% }
+% \lstdefinestyle{CodeMATLAB}{ %
+%   backgroundcolor=\color{white},
+%   basicstyle=\footnotesize,
+%   breakatwhitespace=false
+%   breaklines=true,
+%   captionpos=b,
+%   commentstyle=\color{mygreen},
+%   deletekeywords={...},
+%   escapeinside={James}{Ledoux},
+%   extendedchars=true,
+%   frame=single,
+%   keepspaces=true,
+%   keywordstyle=\color{blue},
+%   language=MATLAB,
+%   otherkeywords={*,...},
+%   numbers=left,
+%   numbersep=5pt,
+%   numberstyle=\tiny\color{mygray},
+%   rulecolor=\color{black},
+%   showspaces=false,
+%   showstringspaces=false,
+%   showtabs=false,
+%   stepnumber=1,
+%   stringstyle=\color{mymauve},
+%   tabsize=4,
+%   title=%\lstname
+% }
+% \lstset{style=CodeMATLAB}
+%

@@ -1,0 +1,79 @@
+\begin{tikzpicture}[node distance=1cm]
+\tikzstyle{level 1}=[sibling distance=5mm]
+	\node (l1){$\lambda_1$}
+		child[grow=right]{node (K1){$\hat{K}_1$}
+			child{node (rhod){$\rho_d$}
+				child{node (GCVd){GCV}} }
+			child{node (rhodot){$\vdots$}
+				child{node[draw=none] (GCVdot){$\vdots$} edge from parent[draw=none] } }
+			child{node (rho2){$\rho_2$}
+				child{node (GCV2){GCV}} }
+			child{node (rho1){$\rho_1$}
+				child{node (GCV1){GCV}} }
+};
+	\draw[->] (l1) edge node [midway, above = 2pt]{ \scriptsize{l\ref{lst:K}:} } (K1) ;
+	\draw[->] (K1) edge (rho1);
+	\draw[->] (K1) edge (rho2);
+	\draw[->] (K1) edge (rhodot);
+	\draw[->] (K1) edge (rhod);
+	\draw[->] (rho1) edge (GCV1);
+	\draw[->] (rho2) edge (GCV2);
+	\draw[->] (rhod) edge (GCVd);
+
+	\draw[decoration={calligraphic brace,amplitude=5pt}, decorate, line width=1pt]
+		(GCV1.north east) -- (GCVd.south east) node [midway,xshift=0.4cm,right] (GCVa){$\text{GCV}_1$};
+
+	
+	\node[below of=l1] (l2){$\lambda_2$}
+		child[grow=right]{node (K2){$\hat{K}_2$}
+			child{node (rhod2){$\rho_d$} }
+			child{node (rhodot2){$\vdots$} }
+			child{node (rho22){\phantom{$\rho_2$}} edge from parent[draw=none]}
+			child{node (rho12){\phantom{$\rho_1$}} edge from parent[draw=none]}
+};
+	\draw[->] (l2) edge (K2);
+	\draw[shorten >=0.4cm] (K2) edge (rho12);
+	\draw[shorten >=0.1cm] (K2) edge (rho22);
+	\draw[->] (K2) edge (rhodot2);
+	\draw[->] (K2) edge (rhod2);
+%	\draw[->] (rho12) edge (GCV12);
+%	\draw[->] (rho22) edge (GCV22);
+%	\draw[->] (rhod2) edge (GCVd2);
+
+
+	\node[below of=l2] (ldot){$\vdots$}
+		child[grow=right]{node (Kdot){$\vdots$} edge from parent[draw=none]};
+	\node[below of=ldot] (ld){$\lambda_d$}
+		child[grow=right]{node (Kd){$\hat{K_d}$}
+			child{node (rhodd){$\rho_d$}
+				child{node (GCVdd){\phantom{GCV}} edge from parent[draw=none] } }
+			child{node (rhodotd){$\vdots$}
+				child{node (GCVdotd){\phantom{$\vdots$}} edge from parent[draw=none] } }
+			child{node (rho2d){$\rho_2$}
+				child{node (GCV2d){\phantom{GCV}} edge from parent[draw=none] } }
+			child{node (rho1d){$\rho_1$}
+				child{node (GCV1d){\phantom{GCV}} edge from parent[draw=none] } }
+ };
+	\draw[->] (ld) edge (Kd);
+	\draw[->] (Kd) edge (rho1d);
+	\draw[->] (Kd) edge (rho2d);
+	\draw[->] (Kd) edge (rhodotd);
+	\draw[->] (Kd) edge (rhodd);
+
+	\draw[decoration={calligraphic brace,amplitude=5pt}, decorate, line width=1pt]
+		(GCV1d.north east) -- (GCVdd.south east) node [midway,xshift=0.4cm,right] (GCVz){$\text{GCV}_d$};
+
+
+\path (GCVa) -- (GCVz) node [midway] {$\vdots$};
+
+\draw[decoration={calligraphic brace,amplitude=5pt}, decorate, line width=1pt]
+	(GCVa.north east) -- (GCVz.south east) node [midway,xshift=0.4cm,right] (GCVopt){$\text{GCV}_{\tilde{d}}$};
+
+\node[right of=GCVopt, node distance=2cm] (Ccl){$(\hat{K},\hat{f},\lambda_{\tilde{d}})$};
+
+\draw[->] (GCVopt) edge (Ccl);
+
+\end{tikzpicture}
+
+
+

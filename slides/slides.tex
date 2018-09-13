@@ -1,0 +1,67 @@
+\documentclass[professionalfont]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{tikz}
+
+% usage: \tikzpic{<x percent>}{<y percent>}{<image size>}{<image name>}
+\newcommand*{\tikzpic}[4]{%
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.south west) [xshift=#1\paperwidth,yshift=#2\paperheight] {\includegraphics[width=#3\linewidth]{#4}};
+\end{tikzpicture}%
+}
+
+\title[Anisotropic \texttt{fdaPDE}]{Estimation of anisotropy in a spatial field in \texttt{fdaPDE} package}
+\author[S. Souque \& T. Kletti]{\underline{Samuel \textsc{Souque}}, \underline{Till \textsc{Kletti}}\\
+{\small \href{mailto:samuel.souque@mail.polimi.it}{\nolinkurl{samuel.souque@mail.polimi.it}}}, \\{\small \href{mailto:tillalexander.kletti@mail.polimi.it}{\nolinkurl{tillalexander.kletti@mail.polimi.it}}}}
+\date[MI, today]{Milano, \today}
+\institute[POLIMI]{Politecnico di Milano}
+
+\usetheme{POLIMI}
+
+\input{Parametres/packages.tex}
+\input{Parametres/commandes.tex}
+
+\begin{document}
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Table of contents}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+\begin{block}{The Problem}
+Given samples from a spatial field, characterize the anisotropy of the field.
+\end{block}
+\begin{block}{Mathematical formulation}
+	We seek to minimize
+	\begin{equation}
+		J_\lambda(\hat{f},K) = \sum_{i=1}^N (\hat{f}(x_i)-f(x_i))^2 + \lambda\int_\Omega \nabla(K\nabla\hat{f}(x)) \d{x}
+	\end{equation}
+	with respect to the estimated field $\hat{f}$, the anisotropy matrix $K$ and the regularization coefficient $\lambda$.
+\end{block}
+% That is, we seek the anisotropy K
+\end{frame}
+
+\section{Method}
+
+\begin{frame}{The algorithm}
+	\input{schema_algo.tex}
+\end{frame}
+
+\subsection{2}
+\begin{frame}
+\frametitle{title}
+\POLIMItitle{POLIMI Title}
+\end{frame}
+
+\begin{frame}
+\frametitle{title}
+\end{frame}
+\end{document}
