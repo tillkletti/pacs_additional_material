@@ -1,0 +1,54 @@
+% Ensemble et opérateur avec un barre précédent le symbole
+\newcommand{\E}{\mathbb{E}}     
+\renewcommand{\P}{\mathbb{P}}     
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}     
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\V}{\mathbb{V}} 
+\newcommand{\1}{\mathds{1}}%néccécite le package dsfont
+
+% Lettres calligaphiques
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cO}{\mathcal{O}}
+
+% Utilisation du différentiel d
+\renewcommand{\d}[1]{\,\ensuremath{\operatorname{d}\!{#1}}}
+
+% D?finition des envrionement de type ?nonc?s num?rot?s simplement
+\newtheorem{theo}{Th?or?me}
+\newtheorem{rema}{Remarque}
+\newtheorem{exem}{Exemple}
+\newtheorem{defi}{D?finition}
+\newtheorem{exer}{Exercice}
+\newtheorem{prop}{Proposition}
+\newtheorem{code}{Code}
+
+% D?finition des m?mes envrionements de type ?nonc?s num?rot?s mais avec l'ajout pr?alable de la section 
+\newtheorem{adef}{D?finition}[section]
+\newtheorem{apro}{Proposition}[section]
+\newtheorem{athe}{Th?or?me}[section]
+\newtheorem{aexe}{Exercice}[section]
+\newtheorem{aexem}{Exemple}[section]
+\newtheorem{arem}{Commentaire}[section]
+
+% D?finition d'un environement qui utilise le m?me compteur que l'environnement athe
+\newtheorem{thm}[athe]{M?me compteur que Th?or?me }
+
+% D?finition d'une commande qui met une boite blanche en but de ligne
+\newcommand{\fdem}{\hspace*{\fill}~$\Box$\par\endtrivlist\unskip}
+
+% D?finition d'un nouvelle environnement avec un argument. La fin de l'environnement est marqu? par le symbole g?n?r? par la commande \fdem 
+\newenvironment{proof}[1]{\textit{Preuve#1.\,}}{\fdem}
+
+% Référencement fainéant des figures
+\newcommand{\tref}[1]{\textsc{Fig.} \ref{#1}}
+
+%indiquer la source d'une figure avec \source{La source}
+\newcommand{\source}[1]{\vspace{-10pt} \caption*{\footnotesize \textbf{Source:} {#1}} }
+

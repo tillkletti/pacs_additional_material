@@ -1,0 +1,29 @@
+The necessary inputs of our algorithms are
+
+\begin{itemize}
+	\item $(x_i,y_i)_{i\in\{1,\hdots,n\}}$	a set of $n$ points in $\R^2$
+	\item $(z_i)_{i\in\{1,\hdots,n\}}$	the $n$ (noisy) observations of the function $f$ at the points $(x_i,y_i)$.
+	\item $(\lambda_j)_{j\in\{1,\hdots,d\}}$	a set of $d$ smoothing parameters used for the estimation of the anisotropy matrix and for the final regression.
+	\item $(\rho_s)_{s\in\{1,\hdots,d\}}$	a set of $d$ smoothing parameters used for the calculation of the GCV coefficient
+	\item !other PDE parameters
+\end{itemize}
+
+\begin{algorithm}
+	\caption{The anisotropic smoothing algorithm}\label{algo:aniso}
+	\begin{algorithmic}[1]
+		\Procedure{\texttt{smooth}}{}\Comment{\texttt{anisotropicSmoothing::smooth()} in the c++ code}
+		\State $j\gets 1$
+		\For{$j\leq d$}
+    		\State $\hat{K}_j\gets\arg\min H_{\lambda_j}(K)$ \label{lst:K}
+			\State $\text{GCV}_j \gets \min_{s\in\{1,\hdots,d\}} \text{GCV}(\rho_s)$
+    	\EndFor
+		\State $\tilde{d} \gets \arg\min_{j\in\{1,\hdots,d\}} \text{GCV}_j$
+		\State $\hat{K} \gets \hat{K}_{\tilde{d}}$
+		\State $\hat{f} \gets \arg\min J_{ \lambda_{\tilde{d}} }(f,\hat{K})$
+		\State \textbf{return} $(\hat{f},\hat{K})$
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+%inclus le schéma de l'algorithme
+\input{schema_algo.tex}

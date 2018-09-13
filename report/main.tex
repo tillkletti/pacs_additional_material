@@ -1,0 +1,49 @@
+\documentclass[10pt,language=english]{article}
+
+\input{Parametres/packages.tex}
+\input{Parametres/marges.tex}
+\input{Parametres/commandes.tex}
+
+\title{\texttt{fdaPDEaniso} --- an extension of \texttt{fdaPDE}}
+\author{Samuel \textsc{Souque} \& Till \textsc{Kletti}}
+\date{\today}
+
+\addbibresource{Biblio.bib}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	\import{sections/}{abstract.tex}
+\end{abstract}
+
+\tableofcontents
+
+\section*{Introduction}
+	%\import{secions/}{intro.tex}
+%explain the pb, give example, cite Bernardi and other papers
+
+\section{The algorithm}
+	\import{sections/}{algo.tex}
+%explain the Bernardi algorithm, write it as pseudo-code
+
+\section{The implementation}
+	\subsection{Structure of the code}
+%interactions with R package, cppoptlib, fdaPDA
+%used programming techniques
+
+\section{Results}
+	\subsection{Performance study}
+%compare cpp with R script
+%analysis: Copying regressionData pb
+%linux vs. Windows
+
+\section*{Conclusion}
+
+%biblio
+\printbibliography
+% Bernardi
+
+\end{document}
+

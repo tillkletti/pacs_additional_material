@@ -1,0 +1,22 @@
+The big goal is the following: We seek to minimize the functional $J(f,K)$:
+
+\begin{equation}\label{eq:JFK}
+	J(f,K) := (1-\rho)\sum_{j=1}^n \left(z_i - f(p_i)\right)^2 + \frac{\rho}{|\Omega|}\int_\Omega (\nabla(K\nabla f))^2.
+\end{equation}
+
+$K$ is the \emph{anisotropy matrix}, $f$ is a function in the Sobolev space $H^2(\Omega)$, where $\Omega$ is a smooth $\cC^2$ domain.
+The pair $(f,K)$ is the "quantity of interest". It will be the output of the program. Since we are in fact in a discrete setting, the integral in equation \eqref{eq:JKF} will in fact be calculated using finite elements.
+
+The inputs are, from a mathematical point of view:
+\begin{enumerate}
+	\item a vector $(p_i)_{i=1,\hdots,n}$ of locations in $\Omega$,
+	\item a vector $(z_i)_{i=1,\hdots,n}$ of observations,
+	\item an elliptic PDE of the form [...],
+	\item (optional) a vector $(c_i)_{i=1,\hdots,n}$ of covariates.
+\end{enumerate}
+
+The outputs are, from a mathematical point of view:
+\begin{enumerate}
+	\item $K$, a $2\times 2$-matrix,
+	\item $(\hat{z}_i)_{i=1,\hdots,n}$ = $(\hat{f}(p_i))_{i=1,\hdots,n}$, the estimation of the function $f$ on the observed locations.
+\end{enumerate}
